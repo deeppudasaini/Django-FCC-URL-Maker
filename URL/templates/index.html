@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Home - URL Shortener- Deep Pudasaini{% endblock title %}
+{% block content %}
+
+    <header class="masthead" style="background-image:url('../static/assets/img/intro-bg.jpg');">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="brand-heading">URL Shortener</h1>
+                        <p class="intro-text">Make any urls short</p><a class="btn btn-link btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section  class="content-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>URL To shorten</h2>
+
+                    <form id="post-form">
+                    {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">URL To Shorten</label>
+    <input type="text" class="form-control" id="link" aria-describedby="emailHelp" name="link">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Shortened Url</label>
+    <input type="text" class="form-control" id="exampleInputPassword1">
+  </div>
+
+  <button type="submit" id="shorten" class="btn btn-primary">Shorten</button>
+</form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
