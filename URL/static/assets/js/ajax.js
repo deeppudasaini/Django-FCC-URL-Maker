@@ -1,6 +1,5 @@
 $(document).on('submit', '#post-form', function(e) {
     e.preventDefault();
-
     $.ajax({
         type: 'POST',
         url: '/create',
@@ -10,7 +9,7 @@ $(document).on('submit', '#post-form', function(e) {
         },
         success: function(data) {
 
-            document.getElementById('#exampleInputPassword1').html("www.http://deeppudasaini.com.np/" + data)
+            $('h3').html("localhost:8000/" + data)
         }
     });
 });

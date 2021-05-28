@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import uuid
 from django.http import HttpResponse
 from .models import URL
@@ -11,5 +11,8 @@ def createLink(request):
         uid=str(uuid.uuid4())[:5]
         new_url=URL(link=link,uuid=uid)
         new_url.save()
-        print(uid)  
         return  HttpResponse(uid)
+
+def go(request, pk):
+    url_details = URL.objects.get(uuid=pk)
+    return redirect('https://'+ url_details.link)

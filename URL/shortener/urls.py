@@ -19,4 +19,5 @@ from . import views
 urlpatterns = [
     path('', views.HomePage,name="Home"),
     path('create', views.createLink,name="create"),
+    path('<str:pk>', views.go, name='go')
 ]
